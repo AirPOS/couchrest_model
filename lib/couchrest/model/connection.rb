@@ -29,7 +29,7 @@ module CouchRest
           unless db.is_a?(CouchRest::Database)
             conf = connection_configuration
             db = [conf[:prefix], db.to_s, conf[:suffix]].reject{|s| s.to_s.empty?}.join(conf[:join])
-            self.server.database!(db)
+            self.server.database(db)
           else
             db
           end
